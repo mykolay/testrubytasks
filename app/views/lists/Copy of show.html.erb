@@ -1,0 +1,20 @@
+<h2><%= @list.name %> </h2>
+
+<p><%= @list.description %> </p>
+
+<ul> <% @list.tasks.each do  |task|  %> 
+	
+	<li> <%= task.descriptio%> </li>
+	##- <%= button_to "Complete", complete_task_path(@list.id,task.id) %> </li
+		
+	<% end %>
+</ul>
+
+ 		<%= form_for [@list, @task] do |form| %>
+ 	<p> <%= form.text_field :descriptio %> <%= form.submit%> </p>
+ 
+ <% end %>
+	
+<hr />
+
+<%= link_to "Back to all list", lists_url %>
